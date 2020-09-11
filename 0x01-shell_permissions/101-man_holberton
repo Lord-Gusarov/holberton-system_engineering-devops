@@ -11,7 +11,7 @@ Eniac was Turing-complete, and able to solve "a large class of numerical problem
 does not take any options.
 .SH SEE ALSO
 ENIAC could be programmed to perfom complex sequences of operations(2), including loops(2), branches(2), and subroutines(2).
-.SH BUG
+.SH BUGS
 No known bugs.
 .SH AUTHOR
 University of Pennsylvania.
