@@ -1,2 +1,3 @@
 #!/bin/bash
-tr cC " "
+tr cC ""
+
