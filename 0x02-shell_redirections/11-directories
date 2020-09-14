@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lRA | grep -c ^d
+find . -name "*" -type d |wc -l
