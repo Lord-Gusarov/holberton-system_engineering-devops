@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((($water#$WATER) + ($stir#$STIR))) | echo 'obase=$behnort' | bc
+echo $(($behlnort#$(($(($water#$WATER))+$(($stir#$STIR))))))
