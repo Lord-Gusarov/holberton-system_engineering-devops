@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -iname '*.gif' -execdir basename -s '.sh' {} + | LC_ALL=C sort
+find -maxdepth 3 -iname '*.gif' -execdir basename -s '.sh' {} + | LC_ALL=C sort
