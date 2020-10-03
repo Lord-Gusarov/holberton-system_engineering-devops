@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -c1-1 | tr -d [[:space:]] && echo ""
+cut -c1-1 | tr -d [[:space:]] | sort
