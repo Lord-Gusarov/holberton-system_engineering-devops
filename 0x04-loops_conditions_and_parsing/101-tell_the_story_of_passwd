@@ -3,7 +3,7 @@
 input="/etc/passwd"
 while IFS=':' read -r USER PASSWD aUID GID UID_INFO HOME_DIR aPATH
 do
-	echo "The user $USER is part of the $GID gang, lives in $HOME_DIR and rides "\
-	"$aPATH. ${aUID}'s place is protected by the passcode $PASSWD, more info "\
+	echo "The user $USER is part of the $GID gang, lives in $HOME_DIR and rides"\
+	"$aPATH. ${aUID}'s place is protected by the passcode $PASSWD, more info"\
 	"about the user here: $UID_INFO"
 done < "$input"
