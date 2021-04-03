@@ -2,7 +2,7 @@
 $path_conf = '/etc/ssh/ssh_config'
 
 file { $path_conf:
-  ensure => present,
+  ensure => file,
 }
 file_line { 'Turn off passwd auth':
   path    => $path_conf,
