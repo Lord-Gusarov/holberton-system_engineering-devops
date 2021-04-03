@@ -7,7 +7,7 @@ file { $path_conf:
 file_line { 'Turn off passwd auth':
   path    => $path_conf,
   line    => 'PasswordAuthentication no',
-  match   => '^PasswordAuthentication',
+  match   => '^PasswordAuthentication yes',
   require => File[$path_conf]
 }
 file_line { 'Declare identity file':
