@@ -1,6 +1,5 @@
 # Makes sure 2 setting are in the client SSH configuration file
 $path_conf = '/etc/ssh/ssh_config'
-
 file { $path_conf:
   ensure => file,
 }
