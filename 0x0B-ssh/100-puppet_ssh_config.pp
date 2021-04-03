@@ -1,9 +1,9 @@
 # Makes sure 2 setting are in the client SSH configuration file
-file_line { 'Turn off passwd auth':
-  path => '/etc/ssh/ssh_config'
-  line => '    IdentityFile ~/.ssh/holberton'
+exec { 'Turn off passwd auth':
+  path    => '/bin',
+  command => "echo 'PasswordAuthentication no' >> /etc/ssh/ssh_config"
 }
-file_line { 'Declare identity file':
-  path => '/etc/ssh/ssh_config'
-  line => '    PasswordAuthentication no'
+exec { 'Declare identity file':
+  path    => '/bin',
+  command => "echo 'IdentityFile ~/.ssh/holberton' >> /etc/ssh/ssh_config",
 }
