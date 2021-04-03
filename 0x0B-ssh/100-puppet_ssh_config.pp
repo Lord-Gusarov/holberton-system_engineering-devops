@@ -5,7 +5,7 @@ file { $path_conf:
   ensure => file,
 }
 file_line { 'Turn off passwd auth':
-  path     => $path_conf,
+  path    => $path_conf,
   line    => 'PasswordAuthentication no',
   match   => '^\s*PasswordAuthentication',
   require => File[$path_conf],
