@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Installs nginx on a web server
+sudo apt-get install nginx -y
+echo "Holberton School for the Win!" | sudo cat "/var/www/html/index.html"
+sudo service nginx restart
