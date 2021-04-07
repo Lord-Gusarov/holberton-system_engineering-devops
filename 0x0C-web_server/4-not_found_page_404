@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Installs nginx on a web server, sets content and redirect action
+sudo apt-get update
+sudo apt-get install nginx -y
+# Sets content
+echo "Holberton School" | sudo tee "/var/www/html/index.html"
+# Sets permanent redirect
+new_string="\\\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "/server_name _;/a $new_string" /etc/nginx/sites-available/default
+# Simple custom 404 page
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+sms_404="\\\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n"
+sudo sed -i "49i $sms_404" /etc/nginx/sites-available/default
+sudo service nginx restart
