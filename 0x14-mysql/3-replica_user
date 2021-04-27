@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Adss replica user to our replica server
+if [[ $# -lt 2 ]]; then
+	echo "USAGE: $0 <user> <password>"
+else
+	newUser='replica_user'
+	mysql -u"$1" -p"$2" << EOQs
+	
+	CREATE USER IF NOT EXISTS $newUser IDENTIFIED BY 'replicator';
+	GRANT REPLICATION SLAVE ON *.* TO $newUser;
+	GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+	FLUSH PRIVILEGES;
+EOQs
+fi
