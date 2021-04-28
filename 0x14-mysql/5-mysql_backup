@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Generates a MySQL dump and creates a compressed archive out of it
+if [[ $# -lt 1 ]]; then
+	echo "USAGE: $1 <password>"
+else
+	dump='backup.sql'
+	mysqldump -uroot -p"$1" --all-databases > "$dump"
+	tar_out="$(date +%d-%m-%Y.tar.gz)"
+	tar -czf "$tar_out" "$dump"
+fi
