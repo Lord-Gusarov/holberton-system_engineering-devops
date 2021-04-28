@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Run software as another user
+if [[ $# -lt 1 ]]; then
+	echo "USAGE: $0 <user>"
+else
+	sudo -u "$1" whoami
+fi
