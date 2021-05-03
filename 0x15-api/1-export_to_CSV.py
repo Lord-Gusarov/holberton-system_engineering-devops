@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Gather data from an API and export in CVS format"""
+"""Gather data from an API and export in CSV format"""
 import requests
 from sys import argv, exit
 
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     username = user[0].get('username')
     to_dos = requests.get(site + 'todos?userId={}'.format(userId)).json()
 
-    with open('{}.cvs'.format(userId), 'w') as out:
+    with open('{}.csv'.format(userId), 'w') as out:
         for task in to_dos:
             out.write('"{}","{}","{}","{}"\n'.format(userId, username,
                                                      task.get('completed'),
